@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      //REST operator
+      function sumAll(...args) {
+        let sum = 0;
+        for (let arg of args) {
+          sum += arg;
+        }
+
+        return sum;
+      }
+
+      let multiply = (...args) => {
+        let mul = 1;
+        for (let arg of args) {
+          mul *= arg;
+        }
+
+        return mul;
+      };
+
+      console.log(sumAll(1));
+      console.log(sumAll(1, 2));
+      console.log(sumAll(1, 2, 3));
+      console.log(sumAll(1, 2, 3, 4, 5, 6, 7, 8, 9));
+
+      console.log(multiply(1, 2));
+      console.log(multiply(2, 5));
+
+      function show(firstName, lastName, ...titles) {
+        console.log(firstName + " " + lastName);
+
+        console.log(titles.length);
+
+        titles.forEach((arg) => console.log(arg));
+      }
+
+      show("Julius", "Caesar", "Consul", "Imperator");
+
+      //spread operator
+
+      let arr = [1, 2, 3, 4, 55, 333, 2, 1, 22220, 21, 23];
+
+      console.log(Math.max(...arr));
+
+      const str = "Hello";
+      console.log(...str);
+
+      let arr2 = [...arr];
+      console.log(arr2);
+
+      let obj = {
+        a: 1,
+        b: 2,
+        c: 3,
+      };
+
+      let obj2 = { ...obj };
+      console.log(obj2);
+    </script>
+  </body>
+</html>
