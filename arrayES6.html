@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      //Map
+
+      let map = new Map();
+
+      map.set("1", "hello");
+      map.set(1, "john");
+      map.set(true, "doe");
+
+      console.log(map, map.get(1), map.get("1"), map.get(true), map.size);
+
+      //Array.map
+
+      let arr1 = [1, 2, 3, 4, 5];
+
+      let arr2 = arr1.map((number) => number * number);
+      console.log(arr2);
+
+      //Array.filter
+
+      let array1 = [
+        {
+          id: 1,
+          name: "talha",
+          status: "employed",
+        },
+        {
+          id: 2,
+          name: "john",
+          status: "employed",
+        },
+        {
+          id: 3,
+          name: "alice",
+          status: "employed",
+        },
+        {
+          id: 4,
+          name: "jack",
+          status: "un-employed",
+        },
+        {
+          id: 5,
+          name: "roy",
+          status: "un-employed",
+        },
+        {
+          id: 6,
+          name: "ralf",
+          status: "un-employed",
+        },
+      ];
+
+      let employed = array1.filter((item) => item.status == "employed");
+      console.log(employed);
+
+      //Array.find
+      let unEmployed = array1.find((item) => item.status == "un-employed");
+      console.log(unEmployed);
+
+      //Reduce
+      const sum = arr1.reduce((sum, curr) => sum + curr, 0);
+      console.log(sum);
+
+      const pets = [
+        "dog",
+        "chicken",
+        "cat",
+        "dog",
+        "chicken",
+        "chicken",
+        "rabbit",
+      ];
+      const petCounts = pets.reduce((obj, pet) => {
+        if (!obj[pet]) {
+          obj[pet] = 1;
+        } else {
+          obj[pet]++;
+        }
+
+        return obj;
+      }, {});
+
+      console.log(petCounts);
+    </script>
+  </body>
+</html>
